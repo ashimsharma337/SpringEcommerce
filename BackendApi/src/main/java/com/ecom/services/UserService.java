@@ -3,18 +3,18 @@ package com.ecom.services;
 import java.util.List;
 
 import com.ecom.entities.User;
-import com.ecom.payloads.UserDto;
+
 
 public interface UserService {
    
-//	UserDto createUser(UserDto user);
-//	
-//	UserDto updateUser(UserDto user, Integer userId);
-//	
-//	UserDto getUserById(Integer userId);
-//	
+    User createUser(User user);
+	
+    User updateUser(User user);
+	
+ 	User getUser(Integer userId);
+
 	List<User> getAllUsers();
-//	
-//	void deleteUser(Integer userId);
+
+    void deleteUser(Integer userId);
 	
 }
