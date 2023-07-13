@@ -2,7 +2,7 @@ package com.ecom.serviceimpl;
 
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,14 +28,6 @@ public class UserServiceImpl implements UserService{
 	}
 
 
-	
-	@Override
-	public User getUser (Integer userId) {
-		
-		return userDao.getById(userId);
-	}
-
-
 	@Override
 	public User createUser(User user) {
         userDao.save(user);
@@ -52,8 +44,17 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public void deleteUser(Integer userId) {
-		User entity = userDao.getOne(userId);
-		userDao.delete(entity);
-		
+	      userDao.deleteById(userId);
 	}
+
+
+	@Override
+	public Optional<User> getUserById(Integer userId) {
+		
+		return userDao.findById(userId);
+	}
+
+
+	
+	
 }

@@ -1,6 +1,7 @@
 package com.ecom.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,9 +33,9 @@ public class UsersControllers {
 	
 	// get user by Id
 	@GetMapping("/users/{userId}")
-	public User getUserById(@PathVariable String userId) {
+	public Optional<User> getUserById(@PathVariable String userId) {
 		
-		return this.userService.getUser(Integer.parseInt(userId));
+		return this.userService.getUserById(Integer.parseInt(userId));
 	}
 	
 	// create user

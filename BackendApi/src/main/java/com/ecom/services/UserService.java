@@ -1,6 +1,7 @@
 package com.ecom.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.ecom.entities.User;
 
@@ -11,7 +12,7 @@ public interface UserService {
 	
     User updateUser(User user);
 	
- 	User getUser(Integer userId);
+ 	Optional<User> getUserById(Integer userId);
 
 	List<User> getAllUsers();
 
