@@ -8,7 +8,11 @@ const routes: Routes = [
   { path: 'about', component: DashboardComponent},
   { path: 'products', component: ProductsComponent},
   { path: 'search', component: DashboardComponent},
-  { path: 'signup', component: DashboardComponent}
+  { path: 'signup', component: DashboardComponent},
+  { path: 'cart', component: DashboardComponent },
+  { path: 'order', component: DashboardComponent },
+  { path: 'payment', component: DashboardComponent },
+  { path: 'history', component: DashboardComponent}
 ];
 
 @NgModule({

@@ -1,2 +1,31 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<!-- <app-navbar></app-navbar> -->
+<!-- <app-products></app-products> -->
+<!--To do add seperate compnent of navbar-->
+
+<mat-toolbar color="primary" class="mat-elevation-z6">
+    <button mat-button (click)="sidenav.toggle()"><mat-icon >shopping_cart</mat-icon>&nbsp;</button>
+    
+    <div class="spacer"></div>
+      <button mat-button routerLink="home"><span>
+        <mat-icon>home</mat-icon>
+        &nbsp;Home</span></button>
+      <a mat-button routerLink="about">About</a>
+      <a mat-button routerLink="products">Products</a>
+      <a mat-button routerLink="search">Search</a>
+      <a mat-raised-button routerLink="signup" color="accent">Signup</a>
+  
+</mat-toolbar>
+
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">Sidenav
+        <mat-list className="sidenavlist">
+            <mat-list-item><mat-icon>add_shopping_cart</mat-icon>&nbsp;<a matbutton routerLink="cart">Cart</a></mat-list-item>
+            <mat-list-item><mat-icon>list_alt</mat-icon>&nbsp;<a matbutton routerLink="order">Order</a></mat-list-item>
+            <mat-list-item><mat-icon>credit_card</mat-icon>&nbsp;<a matbutton routerLink="payment">Payment</a></mat-list-item>
+            <mat-list-item><mat-icon>history</mat-icon>&nbsp;<a matbutton routerLink="history">History</a></mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>Main<app-products></app-products>
+    </mat-sidenav-content>
+</mat-sidenav-container>

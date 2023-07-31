@@ -1,0 +1,23 @@
+mat-sidenav-container {
+    height: 100%
+}
+
+mat-sidenav, mat-sidenav-content {
+    padding: 16px;
+}
+
+mat-sidenav {
+    color: white;
+    background-color: grey;
+    width: 200px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+} 
+
+mat-list-item a, mat-list-item mat-icon {
+    color: white;
+    text-decoration: none;
+}
+
