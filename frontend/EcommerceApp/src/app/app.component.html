@@ -18,7 +18,7 @@
 
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side">Sidenav
+    <mat-sidenav #sidenav mode="side" opened = "true">Sidenav
         <mat-list className="sidenavlist">
             <mat-list-item><mat-icon>add_shopping_cart</mat-icon>&nbsp;<a matbutton routerLink="cart">Cart</a></mat-list-item>
             <mat-list-item><mat-icon>list_alt</mat-icon>&nbsp;<a matbutton routerLink="order">Order</a></mat-list-item>
@@ -26,6 +26,6 @@
             <mat-list-item><mat-icon>history</mat-icon>&nbsp;<a matbutton routerLink="history">History</a></mat-list-item>
         </mat-list>
     </mat-sidenav>
-    <mat-sidenav-content>Main<app-products></app-products>
+    <mat-sidenav-content><app-products></app-products>
     </mat-sidenav-content>
 </mat-sidenav-container>
