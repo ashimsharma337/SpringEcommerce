@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,12 +25,13 @@ public class Product {
 	@Column(name="Quantity")
 	private int  quantity;
 	
-	@Column(name="Image")
-	private String image;
+	@Column(name="Photo")
+	private String photos;
 
 	public int getId() {
 		return id;
 	}
+
 
 	public void setId(int id) {
 		this.id = id;
@@ -58,29 +60,29 @@ public class Product {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
-	public String getImage() {
-		return image;
+	
+	public String getPhotos() {
+		return photos;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setPhotos(String photos) {
+		this.photos = photos;
 	}
+
 
 	public Product() {
 		super();
 	}
 
-	public Product(int id, String name, int price, int quantity, String image) {
+
+	public Product(int id, String name, int price, int quantity, String photos) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.quantity = quantity;
-		this.image = image;
+		this.photos = photos;
 	}
-	
-	
 	
 	
 }
