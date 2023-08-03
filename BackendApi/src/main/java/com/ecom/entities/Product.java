@@ -27,6 +27,9 @@ public class Product {
 	
 	@Column(name="Photo")
 	private String photos;
+	
+	@Column(name="Description")
+	private String description;
 
 	public int getId() {
 		return id;
@@ -68,21 +71,30 @@ public class Product {
 	public void setPhotos(String photos) {
 		this.photos = photos;
 	}
+    
+	
+	public String getDescription() {
+		return description;
+	}
 
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public Product() {
 		super();
 	}
 
 
-	public Product(int id, String name, int price, int quantity, String photos) {
+	public Product(int id, String name, int price, int quantity, String photos, String description) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.quantity = quantity;
 		this.photos = photos;
+		this.description = description;
 	}
-	
-	
+
 }
