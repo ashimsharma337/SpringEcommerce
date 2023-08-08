@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,7 +42,10 @@ public class UsersControllers {
 	// create user
 	@PostMapping("/users")
 	public User createUser(@RequestBody User user) {
-		
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+		String userPassword = user.getPassword();
+		String hashedPassword = encoder.encode(userPassword);
+		user.setPassword(hashedPassword);
 		return this.userService.createUser(user);
 	}
 	

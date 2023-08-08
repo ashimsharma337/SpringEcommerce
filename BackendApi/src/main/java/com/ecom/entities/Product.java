@@ -30,6 +30,9 @@ public class Product {
 	
 	@Column(name="Description")
 	private String description;
+	
+	@Column(name="Category")
+	private String category;
 
 	public int getId() {
 		return id;
@@ -81,13 +84,25 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	
+
+	public String getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 
 	public Product() {
 		super();
 	}
 
 
-	public Product(int id, String name, int price, int quantity, String photos, String description) {
+	public Product(int id, String name, int price, int quantity, String photos, String description, String category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -95,6 +110,7 @@ public class Product {
 		this.quantity = quantity;
 		this.photos = photos;
 		this.description = description;
+		this.category = category;
 	}
 
 }
